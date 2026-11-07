@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{34ef91a0-2e99-5173-b93b-60637269e146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\analysis">
+      <UniqueIdentifier>{7702bd59-890b-5be6-9b6b-bbed0537d4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\app">
+      <UniqueIdentifier>{80f47bc0-1f5b-5244-b4d9-e96960fc37a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{6378827e-0dad-5ead-acd6-c1a2a78acb98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\offsets">
+      <UniqueIdentifier>{bfc9a54c-ad6c-539e-aa12-735de87e4d8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\offsets\resolvers">
+      <UniqueIdentifier>{1ae33716-8535-5432-99a7-10df261ccc85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\output">
+      <UniqueIdentifier>{7069af94-dbd7-567e-a5d0-d1d716085dee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party">
+      <UniqueIdentifier>{06686099-fb5a-57a5-b23b-c9ad7366f80e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\zydis">
+      <UniqueIdentifier>{9639b43c-27c1-5303-bfca-28bbec6014c5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\analysis\disassembler.cpp">
+      <Filter>src\analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\analysis\instruction.cpp">
+      <Filter>src\analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\app\application.cpp">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="src\app\live_check.cpp">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="src\app\options.cpp">
+      <Filter>src\app</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\image.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\pattern.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\process.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\strings.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\offsets\offset_table.cpp">
+      <Filter>src\offsets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\offsets\resolver.cpp">
+      <Filter>src\offsets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\offsets\resolver_pipeline.cpp">
+      <Filter>src\offsets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\offsets\resolvers\camera_resolvers.cpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\offsets\resolvers\engine_resolvers.cpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\offsets\resolvers\entity_resolvers.cpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\offsets\resolvers\pose_resolvers.cpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\offsets\resolvers\python_resolvers.cpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\output\console.cpp">
+      <Filter>src\output</Filter>
+    </ClCompile>
+    <ClCompile Include="src\output\console_report.cpp">
+      <Filter>src\output</Filter>
+    </ClCompile>
+    <ClCompile Include="src\output\offsets_header.cpp">
+      <Filter>src\output</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zydis\Zydis.c">
+      <Filter>third_party\zydis</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\analysis\disassembler.hpp">
+      <Filter>src\analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\analysis\instruction.hpp">
+      <Filter>src\analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\app\application.hpp">
+      <Filter>src\app</Filter>
+    </ClInclude>
+    <ClInclude Include="src\app\live_check.hpp">
+      <Filter>src\app</Filter>
+    </ClInclude>
+    <ClInclude Include="src\app\options.hpp">
+      <Filter>src\app</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\image.hpp">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\pattern.hpp">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\process.hpp">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\strings.hpp">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\types.hpp">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\unique_handle.hpp">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\offsets\offset_table.hpp">
+      <Filter>src\offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\offsets\resolver.hpp">
+      <Filter>src\offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\offsets\resolver_pipeline.hpp">
+      <Filter>src\offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\offsets\resolvers\camera_resolvers.hpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\offsets\resolvers\engine_resolvers.hpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\offsets\resolvers\entity_resolvers.hpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\offsets\resolvers\pose_resolvers.hpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\offsets\resolvers\python_resolvers.hpp">
+      <Filter>src\offsets\resolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\output\console.hpp">
+      <Filter>src\output</Filter>
+    </ClInclude>
+    <ClInclude Include="src\output\console_report.hpp">
+      <Filter>src\output</Filter>
+    </ClInclude>
+    <ClInclude Include="src\output\offsets_header.hpp">
+      <Filter>src\output</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zydis\Zydis.h">
+      <Filter>third_party\zydis</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="third_party\zydis\LICENSE">
+      <Filter>third_party\zydis</Filter>
+    </None>
+  </ItemGroup>
+</Project>

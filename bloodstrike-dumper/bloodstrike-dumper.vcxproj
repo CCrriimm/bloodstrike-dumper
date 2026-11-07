@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{ac8db68a-6571-471c-9e6d-cad01ec8ff7d}</ProjectGuid>
+    <RootNamespace>bloodstrikedumper</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)third_party\zydis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZYDIS_STATIC_BUILD;ZYCORE_STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\analysis\disassembler.cpp" />
+    <ClCompile Include="src\analysis\instruction.cpp" />
+    <ClCompile Include="src\app\application.cpp" />
+    <ClCompile Include="src\app\live_check.cpp" />
+    <ClCompile Include="src\app\options.cpp" />
+    <ClCompile Include="src\core\image.cpp" />
+    <ClCompile Include="src\core\pattern.cpp" />
+    <ClCompile Include="src\core\process.cpp" />
+    <ClCompile Include="src\core\strings.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\offsets\offset_table.cpp" />
+    <ClCompile Include="src\offsets\resolver.cpp" />
+    <ClCompile Include="src\offsets\resolver_pipeline.cpp" />
+    <ClCompile Include="src\offsets\resolvers\camera_resolvers.cpp" />
+    <ClCompile Include="src\offsets\resolvers\engine_resolvers.cpp" />
+    <ClCompile Include="src\offsets\resolvers\entity_resolvers.cpp" />
+    <ClCompile Include="src\offsets\resolvers\pose_resolvers.cpp" />
+    <ClCompile Include="src\offsets\resolvers\python_resolvers.cpp" />
+    <ClCompile Include="src\output\console.cpp" />
+    <ClCompile Include="src\output\console_report.cpp" />
+    <ClCompile Include="src\output\offsets_header.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="third_party\zydis\Zydis.c">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAs>CompileAsC</CompileAs>
+      <SDLCheck>false</SDLCheck>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\analysis\disassembler.hpp" />
+    <ClInclude Include="src\analysis\instruction.hpp" />
+    <ClInclude Include="src\app\application.hpp" />
+    <ClInclude Include="src\app\live_check.hpp" />
+    <ClInclude Include="src\app\options.hpp" />
+    <ClInclude Include="src\core\image.hpp" />
+    <ClInclude Include="src\core\pattern.hpp" />
+    <ClInclude Include="src\core\process.hpp" />
+    <ClInclude Include="src\core\strings.hpp" />
+    <ClInclude Include="src\core\types.hpp" />
+    <ClInclude Include="src\core\unique_handle.hpp" />
+    <ClInclude Include="src\offsets\offset_table.hpp" />
+    <ClInclude Include="src\offsets\resolver.hpp" />
+    <ClInclude Include="src\offsets\resolver_pipeline.hpp" />
+    <ClInclude Include="src\offsets\resolvers\camera_resolvers.hpp" />
+    <ClInclude Include="src\offsets\resolvers\engine_resolvers.hpp" />
+    <ClInclude Include="src\offsets\resolvers\entity_resolvers.hpp" />
+    <ClInclude Include="src\offsets\resolvers\pose_resolvers.hpp" />
+    <ClInclude Include="src\offsets\resolvers\python_resolvers.hpp" />
+    <ClInclude Include="src\output\console.hpp" />
+    <ClInclude Include="src\output\console_report.hpp" />
+    <ClInclude Include="src\output\offsets_header.hpp" />
+    <ClInclude Include="src\pch.hpp" />
+    <ClInclude Include="third_party\zydis\Zydis.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="third_party\zydis\LICENSE" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
