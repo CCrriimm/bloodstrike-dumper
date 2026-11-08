@@ -1,0 +1,24 @@
+name: Build Windows executable
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2025-vs2026
+    steps:
+      - uses: actions/checkout@v4
+      - uses: microsoft/setup-msbuild@v2
+      - name: Build Release x64
+        run: msbuild bloodstrike-dumper.slnx /m /p:Configuration=Release /p:Platform=x64
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: bloodstrike-dumper-windows-x64
+          path: bin/Release/bloodstrike-dumper.exe
+          if-no-files-found: error

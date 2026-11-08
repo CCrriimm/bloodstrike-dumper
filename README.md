@@ -71,6 +71,9 @@ msbuild bloodstrike-dumper.slnx /p:Configuration=Release /p:Platform=x64
 
 The binary ends up in `bin/Release/`.
 
+GitHub Actions also builds the Release x64 executable on pushes, pull requests, and manual runs.
+Download `bloodstrike-dumper-windows-x64` from the completed workflow run’s artifacts.
+
 ## Layout
 
 ```
